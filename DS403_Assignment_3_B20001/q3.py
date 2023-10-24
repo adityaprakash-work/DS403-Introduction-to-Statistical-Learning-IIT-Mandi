@@ -133,6 +133,7 @@ class TemporalPolynomialRegressor:
                     l1_reg = L1 * np.sign(self.weights)
                     l2_reg = L2 * self.weights
                     grad = X_tprd.T @ (Y_pred - Y_tprd) + l1_reg + l2_reg
+
                     self.weights -= learning_rate * grad / batch_size
 
                     avg_loss = np.mean(batch_losses)
